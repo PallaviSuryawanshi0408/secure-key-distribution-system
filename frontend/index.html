@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Secure Key Distribution System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <h1>Secure Key Distribution & Encrypted Communication</h1>
+
+  <div class="container">
+
+    <!-- LEFT PANEL -->
+    <div class="panel left">
+
+      <h2>Node Registration</h2>
+      <input type="text" id="nodeName" placeholder="Enter Node Name (NodeA)" />
+      <button onclick="registerNode()">Register Node</button>
+
+      <hr />
+
+      <h2>Communication Setup</h2>
+
+      <label>Sender Node</label>
+      <select id="senderNode"></select>
+
+      <label>Receiver Node</label>
+      <select id="receiverNode"></select>
+
+      <textarea
+        id="plainMessage"
+        placeholder="Type message to encrypt & send"
+      ></textarea>
+
+      <button onclick="sendEncryptedMessage()">Encrypt & Send</button>
+
+    </div>
+
+    <!-- RIGHT PANEL -->
+    <div class="panel right">
+
+      <h2>Receiver Panel</h2>
+
+      <div id="incomingRequest" class="hidden">
+        <p id="requestText"></p>
+        <button onclick="acceptMessage()">Accept</button>
+        <button onclick="rejectMessage()">Reject</button>
+      </div>
+
+      <textarea
+        id="encryptedMessage"
+        placeholder="Encrypted message will appear here"
+        readonly
+      ></textarea>
+
+      <button onclick="decryptMessage()">Decrypt Message</button>
+
+      <textarea
+        id="decryptedMessage"
+        placeholder="Decrypted message"
+        readonly
+      ></textarea>
+
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
